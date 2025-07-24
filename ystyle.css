@@ -1,51 +1,68 @@
-/* 스타일을 적용할 기본 폰트 설정 */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('https://images.pexels.com/photos/1653357/pexels-photo-1653357.jpeg');
-    background-size: cover; /* 배경 이미지를 화면 크기에 맞게 조정 */
-    background-position: center; /* 배경 이미지 중앙 정렬 */
-    background-attachment: fixed; /* 스크롤 시 배경 이미지 고정 */
-    color: #333; /* 기본 텍스트 색상 */
+    position: relative;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    flex-direction: column;
 }
 
-/* 네비게이션 바 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.pexels.com/photos/1653357/pexels-photo-1653357.jpeg');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    filter: blur(1.5px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
 nav {
-    background-color: #c0c0c063; /* 네비게이션 배경 색: 초록색 */
-    padding: 10px 20px; /* 상하 10px, 좌우 20px 패딩 */
+    background-color: #3b3b3b63;
+    padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* 화면 전체 너비 */
+    width: 100%;
     display: flex;
     align-items: center;
     z-index: 100;
 }
 
-/* 네비게이션 링크 스타일 */
 nav a {
-    color: rgb(0, 0, 0); /* 링크 텍스트 색: 흰색 */
-    text-decoration: none; /* 기본 링크 밑줄 제거 */
+    color: rgb(255, 255, 255);
+    text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
 }
 
-/* 네비게이션 링크에 마우스 올리면 색상 변화 */
 nav a:hover {
-    color: #ffffff; /* 마우스를 올리면 금색 */
+    color: #000000;
 }
 
-/* 페이지 제목 */
 h1 {
     text-align: center;
     font-size: 36px;
-    color: #2E8B57; /* 제목 텍스트 색: 초록색 */
+    color: #3f3f3f;
     padding-top: 50px;
+    position: fixed;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
 }
 
-/* 페이지의 전체 레이아웃을 가운데 정렬 */
 body {
     display: flex;
     justify-content: center;
@@ -54,7 +71,6 @@ body {
     flex-direction: column;
 }
 
-/* 추가 스타일링 (선택적) */
 a:focus, a:hover {
-    outline: none; /* 링크에 포커스시 윤곽선 제거 */
+    outline: none;
 }
